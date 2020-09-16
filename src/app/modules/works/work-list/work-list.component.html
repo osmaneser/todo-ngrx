@@ -1,0 +1,10 @@
+<p>work-list works!</p>
+
+
+<table>
+  <tr *ngFor="let work of (works |async).works;">
+    <td>{{work.status}}</td>
+    <td>{{work.id}}</td>
+    <td>{{work.taskId}}</td>
+  </tr>
+</table>

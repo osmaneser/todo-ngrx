@@ -1,0 +1,39 @@
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+  <mat-grid-list cols="1" rowHeight="60px">
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-form-field class="example-full-width">
+        <mat-label>Favorite food</mat-label>
+        <input matInput formControlName="name" placeholder="Ex. Pizza" [(ngModel)]="task.name">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-form-field class="example-full-width">
+        <mat-label>Leave a comment</mat-label>
+        <textarea matInput formControlName="description" placeholder="Ex. It makes me feel..." [(ngModel)]="task.description"></textarea>
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-form-field appearance="fill">
+        <mat-label>Cars</mat-label>
+        <mat-select formControlName="importance" [(ngModel)]="task.importance">
+          <mat-option [value]="1">Easy</mat-option>
+          <mat-option [value]="2">Normal</mat-option>
+          <mat-option [value]="3">İmportant</mat-option>
+          <mat-option [value]="4">Critical</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button mat-raised-button color="primary" type="submit" >{{taskId > 0 ? 'UPDATE':'ADD'}} TASK</button>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>
+
+
+
+
+
+
+

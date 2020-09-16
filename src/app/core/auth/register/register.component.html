@@ -1,0 +1,61 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+  <mat-grid-list cols="1" rowHeight="60px">
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" placeholder="jack">
+      </mat-form-field>
+    </mat-grid-tile>
+
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Ex. pat@example.com">
+      </mat-form-field>
+    </mat-grid-tile>
+
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-form-field class="example-full-width">
+        <mat-label>Phone</mat-label>
+        <input matInput formControlName="phone" placeholder="5XX-XXX-XX-XX">
+      </mat-form-field>
+    </mat-grid-tile>
+
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-form-field >
+        <mat-label>Enter your password</mat-label>
+        <input matInput
+        formControlName="password"
+        [type]="passHide ? 'password' : 'text'">
+
+        <button mat-icon-button matSuffix (click)="passHide = !passHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passHide">
+        <mat-icon>{{passHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </mat-grid-tile>
+
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-form-field>
+        <mat-label>Enter your repassword</mat-label>
+        <input matInput [type]="rePassHide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="rePassHide = !rePassHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="rePassHide">
+        <mat-icon>{{rePassHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </mat-grid-tile>
+
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button mat-raised-button color="accent" >DO REGISTER</button>
+    </mat-grid-tile>
+
+
+  </mat-grid-list>
+
+</form>

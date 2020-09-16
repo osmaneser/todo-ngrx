@@ -1,0 +1,31 @@
+<mat-grid-list cols="1" rowHeight="100px">
+
+  <div *ngIf="isLoading" class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+    <mat-grid-tile>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="pat@example.com" formControlName="email" required>
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </mat-grid-tile>
+
+      <mat-grid-tile>
+        <button mat-raised-button color="primary" type="submit" class="mr-5">LOGIN</button>
+        <button mat-raised-button color="primary" routerLink="/register">REGISTER</button>
+      </mat-grid-tile>
+  </form>
+
+</mat-grid-list>
