@@ -19,7 +19,7 @@ export class ImportancePipe implements PipeTransform {
         element.style.backgroundColor = "rgba(255, 0, 200, 0.5)";
         return "Önemli";
       case enumImportance.critical:
-        element.style.backgroundColor = "rgba(255, 0, 0, 0.60)";
+        element.style.backgroundColor = "rgba(255, 0, 0, 0.50)";
         return "Kritik";
 
       default:
